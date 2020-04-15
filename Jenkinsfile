@@ -31,7 +31,7 @@ pipeline {
             agent {
                 dockerfile {
                     filename "Dockerfile.build"
-                    args "-v ${PWD}:/usr/src/app -w /usr/src/app"
+                    args "-u 1000:1000 -v ${PWD}:/usr/src/app -w /usr/src/app"
                     label "build-image"
                     reuseNode true
                 }
